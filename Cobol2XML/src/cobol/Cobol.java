@@ -31,6 +31,10 @@ public class Cobol implements PubliclyCloneable {
 	protected int dayDateWritten = 0;
 	protected String monthDateWritten;
 	protected int yearDateWritten = 0;
+	
+	protected String constantName;
+	protected double constantValue;
+	protected int lineNumber = 0;
 
 	
 	/**
@@ -166,16 +170,28 @@ public class Cobol implements PubliclyCloneable {
 		return yearDateWritten;
 	}
 	
+	
+	
+	public String getContstantName() {
+		return constantName;
+	};
+	public double getConstantValue() {
+		return constantValue;
+	};
+	public int getLineNumber() {
+		return lineNumber;
+	};
+	
+	
+	
 	/**
 	 * Set a line of commented text from the COBOL program.
 	 *
 	 * @return line of commented text from the COBOL program
-	 */
+	 */	
 	public void setCommentLine(String commentLine) {
 		this.commentLine = commentLine;
 	}
-
-
 
 	/**
 	 * Set the name of this cobol file.
@@ -230,6 +246,16 @@ public class Cobol implements PubliclyCloneable {
 	 */
 	public void setDivisionName(String divisionName) {
 		this.divisionName = divisionName;
+	}
+	
+	public void setConstantName(String constantName) {
+		this.constantName = constantName;
+	}
+	public void setConstantValue(double constantValue) {
+		this.constantValue = constantValue;
+	}
+	public void setLineNumber(int lineNumber) {
+		this.lineNumber = lineNumber;
 	}
 
 	/**

@@ -90,7 +90,18 @@ public Token(double nval) {
  * @return   a token constructed from the given string
  */
 public Token (String sval) {
-	this(TT_WORD, sval, 0);
+	//Set the type of the token based on the content
+	if(sval != null && sval.startsWith("\"") && sval.endsWith("\"")) {
+		this.ttype = TT_QUOTED; //Set the type to TT_QUOTED for quoted string
+		//Remove the quotes from the string value
+		this.sval = sval.substring(1, sval.length()-1);
+	}else {
+		this.ttype = TT_WORD; //Set the default typ to TT_WORD
+		this.sval = sval;
+	}
+	this.nval = 0;
+	
+	//this(TT_WORD, sval, 0);
 }
 /**
  * Constructs a token of the indicated type and associated 

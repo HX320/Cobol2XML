@@ -65,10 +65,23 @@ public class XMLPayload {
 	         e.printStackTrace();
 	     }
 		
+		
+		
 	}
 	
 	
 	public void addElements(Cobol c) {
+		/*add ConstantName element*/
+		String constantName = c.getConstantName();
+		if(constantName!= null) {
+			this.addConstantValueElement(constantName,  c.getConstantValue(), c.getLineNumber());
+			//System.out.println("Got Section");
+			//Add contents of procedure division
+		}else {
+			//System.out.println("Comment Line Null");
+		}
+		
+		
 		/*
 		 *  add sectionName element
 		 */		
@@ -129,7 +142,7 @@ public class XMLPayload {
 		if(yearDateWritten != 0) {
 			this.addYearDateWrittenElement( yearDateWritten );
 		}
-
+		
 	}
 	
 	void addConstantValueElement(String constantName, double constantValue, int lineNumber) {

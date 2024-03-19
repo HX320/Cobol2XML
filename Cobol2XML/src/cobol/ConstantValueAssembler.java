@@ -12,7 +12,7 @@ public class ConstantValueAssembler extends Assembler{
 		
 		t = (Token) a.pop();
 		//This should be the word "value" so we don't need any action here
-		//String tokenString = t.sval();
+		String tokenString = t.sval();
 		//System.out.println("Token String[3]:" + tokenString);
 		
 		t = (Token) a.pop();

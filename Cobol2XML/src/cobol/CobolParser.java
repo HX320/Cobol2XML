@@ -45,7 +45,7 @@ public class CobolParser {
 		Alternation a = new Alternation();
 		
 		a.add(constantValue());
-		
+	
 		Symbol fullstop = new Symbol('.');
 		fullstop.discard();
 		
@@ -139,7 +139,7 @@ public class CobolParser {
 		s.setAssembler(new DateAssembler());
 		return s;
 	}
-
+	
 
 	/**
 	 * Return the primary parser for this class -- cobol().
